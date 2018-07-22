@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="ingredient"
+            type="com.example.mohamed.bakingapp.models.Ingredient" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal">
+
+        <com.github.vipulasri.timelineview.TimelineView
+            android:id="@+id/ingredientTimeline"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="center_vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:line="@color/colorPrimary"
+            app:lineSize="2dp"
+            app:markerSize="12dp" />
+
+        <TextView
+            android:id="@+id/ingredientName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:text="@{ingredient.ingredient}"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:textStyle="bold"
+            app:fontFamily="@font/anonymouspro_font"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/ingredientTimeline"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Graham Cracker crumbs" />
+
+        <TextView
+            android:id="@+id/ingredientQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="4dp"
+            android:paddingEnd="4dp"
+            android:paddingRight="4dp"
+            android:gravity="center_vertical"
+            android:text='@{ingredient.formattedQuantity}'
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            app:fontFamily="@font/anonymouspro_font"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ingredientMeasure"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ingredientTimeline"
+            app:layout_constraintStart_toStartOf="@+id/ingredientName"
+            app:layout_constraintTop_toBottomOf="@+id/ingredientName"
+            tools:text="2" />
+
+        <TextView
+            android:id="@+id/ingredientMeasure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
+            android:gravity="center_vertical"
+            android:text='@{ingredient.measure}'
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            app:fontFamily="@font/anonymouspro_font"
+            app:layout_constraintBottom_toBottomOf="@+id/ingredientQuantity"
+            app:layout_constraintStart_toEndOf="@+id/ingredientQuantity"
+            tools:text="Cups" />
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BakingApp</string>
+    <string name="recipe_image_preview_cd">Recipe Image Preview</string>
+
+    <string name="app_name_one">Baking</string>
+    <string name="app_name_two">Time</string>
+    <string name="title_activity_recipe_details">RecipeDetailsActivity</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_add_to_widget">Add To Widget</string>
+    <string name="servings_label">Servings:</string>
+    <string name="ingredients_label">Ingredients</string>
+
+    <string name="description_label">description</string>
+    <string name="next_label">Next</string>
+    <string name="previous_label">Back</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="no_recipes_widget">You haven\'t added any recipes</string>
+</resources>

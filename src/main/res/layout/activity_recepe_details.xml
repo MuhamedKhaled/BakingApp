@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.mohamed.bakingapp.activities.RecepeDetailsActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false"
+            app:toolbarId="@id/toolbar">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax">
+
+                <ImageView
+                    android:id="@+id/recipeDetailsImage"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:contentDescription="@string/recipe_image_preview_cd"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:src="@drawable/sample_dessert_image" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:alpha="0.4"
+                    android:fitsSystemWindows="true"
+                    app:layout_constraintBottom_toBottomOf="@id/recipeDetailsImage"
+                    app:layout_constraintEnd_toEndOf="@id/recipeDetailsImage"
+                    app:layout_constraintStart_toStartOf="@id/recipeDetailsImage"
+                    app:layout_constraintTop_toTopOf="@id/recipeDetailsImage"
+                    app:srcCompat="@color/colorPrimary" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/recipeDetailsName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/anonymouspro_font"
+                    app:layout_constraintBottom_toTopOf="@id/recipeDetailsServings"
+                    app:layout_constraintStart_toStartOf="@id/recipeDetailsImage"
+                    tools:text="Nutella Pie" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="107dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@color/colorAccent"
+                    app:layout_constraintStart_toStartOf="@id/recipeDetailsName"
+                    app:layout_constraintTop_toBottomOf="@id/recipeDetailsName" />
+
+                <TextView
+                    android:id="@+id/servingsLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:text="@string/servings_label"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    app:fontFamily="@font/anonymouspro_font"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/recipeDetailsName" />
+
+                <TextView
+                    android:id="@+id/recipeDetailsServings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    app:fontFamily="@font/anonymouspro_font"
+                    app:layout_constraintBaseline_toBaselineOf="@id/servingsLabel"
+                    app:layout_constraintBottom_toBottomOf="@id/servingsLabel"
+                    app:layout_constraintStart_toEndOf="@id/servingsLabel"
+                    tools:text="1" />
+            </android.support.constraint.ConstraintLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <include
+        layout="@layout/content_recipe_details"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="normal"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end"
+        app:srcCompat="@drawable/ic_chef" />
+
+</android.support.design.widget.CoordinatorLayout>
